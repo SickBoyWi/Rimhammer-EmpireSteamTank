@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!--If Empre mod is present, add research to idols and relics. -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Rimhammer - The End Times - Empire</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/Vehicles.VehicleTurretDef[@Name="RH_TET_FlameTurret"]/ammunition/thingDefs</xpath>
+					<value>
+						<thingDefs><li>RH_TET_BlackPowder</li></thingDefs>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="RH_TET_SteamTank_WorkBench"]/researchPrerequisites</xpath>
+					<value>
+						<li>RH_TET_Empire_Warmachines_Basic</li>
+						<li>RH_TET_Empire_Lighting_Advanced</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[@Name="RH_TET_VehiclePartBase"]/recipeMaker/researchPrerequisites</xpath>
+					<value>
+						<li>RH_TET_Empire_Warmachines_Basic</li>
+						<li>RH_TET_Empire_Lighting_Advanced</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/Vehicles.VehicleBuildDef[@Name="RH_TET_SteamTank_ConquerorBlueprint"]/researchPrerequisites</xpath>
+					<value>
+						<li>RH_TET_Empire_Warmachines_Basic</li>
+						<li>RH_TET_Empire_Lighting_Advanced</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/Vehicles.VehicleBuildDef[@Name="RH_TET_SteamTank_AlterKameradBlueprint"]/researchPrerequisites</xpath>
+					<value>
+						<li>RH_TET_Empire_Warmachines_Advanced</li>
+						<li>RH_TET_Empire_Lighting_Advanced</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/Vehicles.VehicleBuildDef[@Name="RH_TET_SteamTank_DeliveranceBlueprint"]/researchPrerequisites</xpath>
+					<value>
+						<li>RH_TET_Empire_Warmachines_Basic</li>
+						<li>RH_TET_Empire_Lighting_Advanced</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/Vehicles.VehicleBuildDef[@Name="RH_TET_SteamTank_IndomitableBlueprint"]/researchPrerequisites</xpath>
+					<value>
+						<li>RH_TET_Empire_Warmachines_Basic</li>
+						<li>RH_TET_Empire_Lighting_Advanced</li>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/Vehicles.VehicleBuildDef[@Name="RH_TET_SteamTank_EmperorBlueprint"]/researchPrerequisites</xpath>
+					<value>
+						<li>RH_TET_Empire_Warmachines_Advanced</li>
+						<li>RH_TET_Empire_Lighting_Advanced</li>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>
+

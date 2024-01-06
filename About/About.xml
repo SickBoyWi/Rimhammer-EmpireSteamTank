@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Rimhammer - Steam Tank</name>
+	<author>SickBoyWi</author>
+	<url/>
+	<description>This mod makes use of the most epic Phil’s Vehicles framework./n/nThe purpose of this mod is to add themed vehicles to accompany the Rimhammer - The End Times mod set, although the Rimhammer mods are not required for this mod. 
+	
+	This adds a medieval / steam punk / Warhammer Fantasy style series of Steam Tanks to the game. 
+	
+	There are a handful of different variants of the steam tank, each with its own specialization. There are also components that can be claimed from destroyed steam tanks, or crafted on your own.
+	
+	The steam tanks are stylized as they were for the Warhammer world, and therefore the patterns and colors that come with the vehilce framework will not be utilized.	</description>
+	<packageId>sickboywi.rimhammer.steamtanks</packageId>
+	<supportedVersions>
+		<li>1.4</li>
+	</supportedVersions>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>SmashPhil.VehicleFramework</packageId>
+			<displayName>Vehicle Framework</displayName>
+			<downloadUrl>https://github.com/SmashPhil/Vehicles/releases/latest</downloadUrl>
+			<steamWorkshopUrl/>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>brrainz.harmony</li>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>Ludeon.RimWorld.BioTech</li>
+		<li>SmashPhil.VehicleFramework</li>
+	</loadAfter>
+</ModMetaData>

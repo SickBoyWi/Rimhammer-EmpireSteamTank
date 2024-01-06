@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<Vehicles.VehicleDef Name="RH_TET_SteamTank_Base" ParentName="BaseVehiclePawn" Abstract="True">
+		<properties>
+			<worldSpeedMultiplier>1</worldSpeedMultiplier>
+		</properties>
+		
+		<soundOneShotsOnEvent Inherit="False">
+			<li>
+				<key>PawnEntered</key>
+				<value>RH_TET_Shot_SteamTankEntrySound</value>
+			</li>
+			<li>
+				<key>PawnExited</key>
+				<value>RH_TET_Shot_SteamTankEntrySound</value>
+			</li>
+			<li>
+				<key>IgnitionOn</key>
+				<value>RH_TET_Shot_SteamTankStartSound</value>
+			</li>
+			<li>
+				<key>IgnitionOff</key>
+				<value>RH_TET_Shot_SteamTankStartSound</value>
+			</li>
+		</soundOneShotsOnEvent>
+	</Vehicles.VehicleDef>
+
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable" Name="RH_TET_SteamTank_ConquerorBlueprint">
+		<defName>RH_TET_SteamTank_ConquerorBlueprint</defName>
+		<label>Empire Conqueror Steam Tank</label>
+		<description>A heavily armored combat vehicle.</description>
+
+		<graphicData>
+			<texPath>Things/Vehicles/t1/Conqueror/Conqeuror_Tank_north</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(4,6)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>1000</MaxHitPoints>
+			<WorkToBuild>12500</WorkToBuild>
+			<Flammability>0.05</Flammability>
+		</statBases>
+		
+		<size>(3,5)</size>
+		
+		<researchPrerequisites>
+			<li>Smithing</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<Steel>250</Steel>
+			<ComponentIndustrial>8</ComponentIndustrial>
+			<Steam_Tank_Wheel>4</Steam_Tank_Wheel>
+			<Steam_Tank_SteamPipes>2</Steam_Tank_SteamPipes>
+			<Steam_Tank_SteamChamber>1</Steam_Tank_SteamChamber>
+			<Steam_Tank_Piston>2</Steam_Tank_Piston>
+			<RH_TET_ST_Boiler>1</RH_TET_ST_Boiler>
+			<RH_TET_ST_ArmorPlate>6</RH_TET_ST_ArmorPlate>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		
+		<thingToSpawn>RH_TET_SteamTank_Conqueror</thingToSpawn>
+		
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</Vehicles.VehicleBuildDef>
+
+	<Vehicles.VehicleDef ParentName="RH_TET_SteamTank_Base">
+		<defName>RH_TET_SteamTank_Conqueror</defName>
+		<label>Conqueror Steam Tank</label>
+		<description>A Steam Tank is a monstrous, smoke-belching, steam-driven Imperial war machine that rumbles towards the enemy and fires deadly cannonballs from its steam-powered cannons to crush all those that stand against the Empire.\n\nThe tried and true  Steamtank variant, this is the classic version with no changes since its creation 500 years ago. This is the lowest tier steam tank available.</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/t1/Conqueror/Conqeuror_Tank</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(4, 6)</drawSize>
+			<color>(138, 138, 138)</color>
+			<colorTwo>(225, 225, 225)</colorTwo>
+			<colorThree>(50, 50, 50)</colorThree>
+		</graphicData>
+		
+		<fillPercent>1</fillPercent>
+		
+		<buildDef>RH_TET_SteamTank_ConquerorBlueprint</buildDef>
+		
+		<size>(3, 5)</size>
+		
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<vehicleCategory>Combat</vehicleCategory>
+		<techLevel>Medieval</techLevel>
+		<vehicleType>Land</vehicleType>
+		
+		<statBases>
+			<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+			<ArmorRating_Heat>0.80</ArmorRating_Heat>
+			<Flammability>0.5</Flammability>
+			<MarketValue>3500</MarketValue>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>500</Mass>
+			<MoveSpeed>5.0</MoveSpeed>
+			<CargoCapacity>250</CargoCapacity>
+			<RepairRate>0.5</RepairRate>
+		</vehicleStats>
+		
+		<soundSustainersOnEvent>
+			<li>
+				<key>(IgnitionOn, IgnitionOff)</key>
+				<value>RH_TET_SteamTankEngineSound</value>
+			</li>
+		</soundSustainersOnEvent>
+		
+		<race>
+			<baseBodySize>4.5</baseBodySize>
+		</race>
+		
+		<properties>
+			<customRoadCosts AssignDefaults="0.4"/>
+			
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 3)</li>
+			</vehicleJobLimitations>
+
+			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
+			
+			<roles>
+				<li>
+					<key>driver</key>
+					<label>Driver</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+				</li>
+				<li>
+					<key>gunner</key>
+					<label>Gunner</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					
+					<handlingTypes>Turret</handlingTypes>
+					
+					<turretIds>
+						<li>mainTurret</li>
+					</turretIds>
+				</li>
+				<li>
+					<key>passenger</key>
+					<label>Passenger</label>
+					<slots>2</slots>
+				</li>
+			</roles>
+		</properties>
+		
+		<components>
+			<li>
+				<key>Boiler</key>
+				<label>Boiler</label>
+				<health>250</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>Internal</depth>
+				
+				<reactors>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.15</chance>
+						<radius>3</radius>
+						<damageDef>Bomb</damageDef>
+					</li>
+				</reactors>
+				
+				<hitbox>
+					<cells>
+						<li>(0, -1)</li>
+						<li>(0, -2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontLeftWheel</key>
+				<label>Front Left Wheel</label>
+				<health>80</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(-1, 2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontRightWheel</key>
+				<label>Front Right Wheel</label>
+				<health>80</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(1, 1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackLeftWheel</key>
+				<label>Back Left Wheel</label>
+				<health>80</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(-1, -2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackRightWheel</key>
+				<label>Back Right Wheel</label>
+				<health>80</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(1, -2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>SteamPipes</key>
+				<label>Steam Pipes</label>
+				<health>75</health>
+				<depth>Internal</depth>
+				
+				<hitbox>
+					<cells>
+						<li>(0, 1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontArmorPlating</key>
+				<label>Front Armor Plating</label>
+				<health>600</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+				</armor>
+				
+				<hitbox>
+					<side>Front</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>LeftArmorPlating</key>
+				<label>Left Armor Plating</label>
+				<health>450</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+				</armor>
+				
+				<hitbox>
+					<side>Left</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightArmorPlating</key>
+				<label>Right Armor Plating</label>
+				<health>450</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+				</armor>
+				
+				<hitbox>
+					<side>Right</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>BackArmorPlating</key>
+				<label>Rear Armor Plating</label>
+				<health>250</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+				</armor>
+				
+				<hitbox>
+					<side>Back</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>Steamchamber</key>
+				<label>Steamchamber</label>
+				<health>200</health>
+				<depth>Internal</depth>
+				
+				<reactors>
+					<li Class="Vehicles.Reactor_FuelLeak"/>
+				</reactors>
+				
+				<hitbox>
+					<cells>
+						<li>(0, -1)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>SteeringApparatus</key>
+				<label>Steering Apparatus</label>
+				<health>100</health>
+				<depth>Internal</depth>
+				<hitWeight>5</hitWeight>
+			</li>
+			<li>
+				<key>Piston</key>
+				<label>Piston</label>
+				<health>150</health>
+				<depth>Internal</depth>
+			</li>
+			<li>
+				<key>Roof</key>
+				<label>Roof</label>
+				<health>250</health>
+				<depth>External</depth>
+				<hitWeight>10</hitWeight>
+				
+				<armor>
+					<ArmorRating_Blunt>0.60</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+				</armor>
+			</li>
+		</components>
+
+		<comps>
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>WoodLog</fuelType>
+				<leakDef>Filth_Water</leakDef>
+				<fuelConsumptionRate>20</fuelConsumptionRate>
+				<fuelCapacity>100</fuelCapacity>
+			</li>
+			<li Class="Vehicles.CompProperties_VehicleTurrets">
+				<turrets>
+					<li>
+						<turretDef>RH_TET_SteamTank_HullCannon</turretDef>
+						
+						<renderProperties>
+							<north>(0, 1.3)</north>
+							<south>(0, -1.3)</south>
+							<east>(1.2, 0.3)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Hull Cannon</gizmoLabel>
+						
+						<angleRestricted>(345, 15)</angleRestricted>
+						<aimPieOffset>(0, 0.5)</aimPieOffset>
+						
+						<key>hullTurret</key>
+					</li>
+					<li>
+						<turretDef>RH_TET_SteamTank_TurretSteam</turretDef>
+						
+						<renderProperties>
+							<north>(0, 0.8)</north>
+							<south>(0, -0.6)</south>
+							<east>(0.5, 0.6)</east>
+						</renderProperties>
+						
+						<gizmoLabel>Steam Turret</gizmoLabel>
+						
+						<angleRestricted/>
+						<aimPieOffset>(0, 2.55)</aimPieOffset>
+						
+						<key>steamTurret</key>
+					</li>
+				</turrets>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>RH_TET_SteamTank_HullTurretBullet</defName>
+		<label>steam tank shell</label>
+		
+		<thingClass>Projectile_Explosive</thingClass>
+		
+		<graphicData>
+			<texPath>Things/Projectile/Proj_CannonBall/RH_TET_Empire_CannonBall</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.0</drawSize>
+		</graphicData>
+		
+		<projectile>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>85</damageAmountBase>
+			<speed>120</speed>
+			<explosionRadius>2.5</explosionRadius>
+			<explosionDamageFalloff>false</explosionDamageFalloff>
+			<armorPenetrationBase>3.0</armorPenetrationBase>
+			<soundExplode>MortarIncendiary_Explode</soundExplode>
+			<soundAmbient>MortarRound_Ambient</soundAmbient>
+			<ai_IsIncendiary>true</ai_IsIncendiary>
+		</projectile>
+
+	</ThingDef>
+	
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>RH_TET_SteamTank_HullCannon</defName>
+		<label>steam tank cannon</label>
+		<description>A large cannon mounted on steam tanks, capable of blasting cannon ball at high speed using steam power.</description>
+		
+		<turretType>Rotatable</turretType>
+		<shotSound>RH_TET_Shot_SteamTankCannonSound</shotSound>
+		<reloadSound>RH_TET_Shot_SteamTankReloadSound</reloadSound>
+		
+		<projectile>RH_TET_SteamTank_HullTurretBullet</projectile>
+		<reloadTimer>4.4</reloadTimer>
+		<warmUpTimer>3.4</warmUpTimer>
+		<magazineCapacity>1</magazineCapacity>
+		<chargePerAmmoCount>5</chargePerAmmoCount>
+		<genericAmmo>true</genericAmmo>
+
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>.6</rotationSpeed>
+		
+		<projectileOffset>5.25</projectileOffset>
+		<hitFlags>IntendedTarget</hitFlags>
+		<maxRange>100</maxRange>
+		<minRange>3</minRange>
+		
+		<attachProjectileFlag>Tank</attachProjectileFlag>
+		
+		<recoil>
+			<distanceTotal>0.3</distanceTotal>
+			<distancePerTick>0.2</distancePerTick>
+			<speedMultiplierPostRecoil>0.35</speedMultiplierPostRecoil>
+		</recoil>
+		
+		<vehicleRecoil>
+			<distanceTotal>0.1</distanceTotal>
+			<distancePerTick>0.05</distancePerTick>
+			<speedMultiplierPostRecoil>0.55</speedMultiplierPostRecoil>
+		</vehicleRecoil>
+		
+		<fireModes>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenBursts>1</ticksBetweenBursts>
+				<spreadRadius>1</spreadRadius>
+				<label>Single</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/GenericTurret/TankTurretBlank</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>
+		</graphicData>
+		
+		<ammunition>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</ammunition>
+		
+		<motes>
+			<li>
+				<cycles>1</cycles>
+				<moteDef>Mote_CannonPlume</moteDef>
+				<animationType>Reset</animationType>
+			</li>
+		</motes>
+	</Vehicles.VehicleTurretDef>
+	
+	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+	
+		<defName>RH_TET_SteamTank_TurretSteamBullet</defName>
+		<label>steam</label>
+		<thingClass>RimhammerSteamTanks.SteamBlastProjectile</thingClass>
+		
+		<graphicData>
+			<texPath>Things/Projectile/Proj_SteamGun</texPath>
+			<texPathFadeOut>Things/Projectile/Proj_SteamGunFadeOut</texPathFadeOut>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		
+		<projectile>
+			<damageDef>Burn</damageDef>
+			<speed>45</speed>
+			<damageAmountBase>35</damageAmountBase>
+		</projectile>
+
+		<drawOffscreen>true</drawOffscreen>
+		<lifeTimeDuration>50</lifeTimeDuration>
+		<widthScaleFactor>0.65</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0, 0, -3.30)</startingPositionOffset>
+		<totalSizeScale>1.15</totalSizeScale>
+		<tickFrameRate>2</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
+		<tickDamageRate>20</tickDamageRate>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		<minDistanceToAffect>2</minDistanceToAffect>
+	</VFECore.ExpandableProjectileDef>
+	
+	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase">
+		<defName>RH_TET_SteamTank_TurretSteam</defName>
+		<label>steam tank steam cannon</label>
+		<description>A turret mounted steam cannon, capable of blasting very hot steam at nearby foes in a broad swath. Causes severe burns, scalds, and extreme pain. Great for incapacitating multiple grouped foes.</description>
+		
+		<turretType>Rotatable</turretType>
+		<shotSound>RH_TET_Shot_SteamTankSteamCannonSound</shotSound>
+		<reloadSound>RH_TET_Shot_SteamTankReloadSound</reloadSound>
+		
+		<projectile>RH_TET_SteamTank_TurretSteamBullet</projectile>
+		<reloadTimer>4.4</reloadTimer>
+		<warmUpTimer>3.4</warmUpTimer>
+		<magazineCapacity>1</magazineCapacity>
+		<chargePerAmmoCount>5</chargePerAmmoCount>
+		<genericAmmo>true</genericAmmo>
+
+		<autoSnapTargeting>false</autoSnapTargeting>
+		<rotationSpeed>.5</rotationSpeed>
+		
+		<projectileOffset>5.25</projectileOffset>
+		<hitFlags>IntendedTarget</hitFlags>
+		<maxRange>16</maxRange>
+		<minRange>1</minRange>
+		
+		<attachProjectileFlag>Tank</attachProjectileFlag>
+		
+		<recoil>
+			<distanceTotal>0.01</distanceTotal>
+			<distancePerTick>0.01</distancePerTick>
+			<speedMultiplierPostRecoil>0.35</speedMultiplierPostRecoil>
+		</recoil>
+		
+		<vehicleRecoil>
+			<distanceTotal>0.01</distanceTotal>
+			<distancePerTick>0.01</distancePerTick>
+			<speedMultiplierPostRecoil>0.55</speedMultiplierPostRecoil>
+		</vehicleRecoil>
+		
+		<fireModes>
+			<li>
+				<shotsPerBurst>1</shotsPerBurst>
+				<ticksBetweenBursts>1</ticksBetweenBursts>
+				<spreadRadius>2.9</spreadRadius>
+				<label>Steam Blast</label>
+				<texPath>UI/Gizmos/FireRate_Single</texPath>
+			</li>
+		</fireModes>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/t1/Conqueror/Conqeuror_Tank_CannonTop_a</texPath>
+			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(3.9, 3.9)</drawSize>
+		</graphicData>
+		
+		<ammunition>
+			<thingDefs>
+				<li>WoodLog</li>
+			</thingDefs>
+		</ammunition>
+		
+	</Vehicles.VehicleTurretDef>
+
+</Defs>

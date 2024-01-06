@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<GenStepDef>
+		<order>319</order>
+		<defName>RH_TET_SteamTanks_Wrecks</defName>
+		<genStep Class="GenStep_ScatterGroup">
+			<allowInWaterBiome>false</allowInWaterBiome>
+			<minSpacing>85</minSpacing>
+			<countPer10kCellsRange>0.2~0.5</countPer10kCellsRange>
+			<spotMustBeStandable>true</spotMustBeStandable>
+			<allowRoofed>false</allowRoofed>
+			<validators>
+				<li Class="ScattererValidator_Buildable">
+					<radius>3</radius>
+					<affordance>Heavy</affordance>
+				</li>
+			</validators>
+			<groups>
+				<li>
+					<things>
+						<RH_TET_SteamTank_WreckA>0.20</RH_TET_SteamTank_WreckA>
+					</things>
+					<indoorRuin>false</indoorRuin>
+					<coveredCellsPer10Cells>0.5~1</coveredCellsPer10Cells>
+					<filthDef>Filth_RubbleBuilding</filthDef>
+					<filthExpandBy>1</filthExpandBy>
+					<filthChance>0.05</filthChance>
+					<clusterRectRadius>5~6</clusterRectRadius>
+				</li>
+				<li>
+					<things>
+						<RH_TET_SteamTank_WreckB>0.15</RH_TET_SteamTank_WreckB>
+					</things>
+					<indoorRuin>false</indoorRuin>
+					<coveredCellsPer10Cells>0.5~1</coveredCellsPer10Cells>
+					<filthDef>Filth_RubbleBuilding</filthDef>
+					<filthExpandBy>1</filthExpandBy>
+					<filthChance>0.05</filthChance>
+					<clusterRectRadius>5~6</clusterRectRadius>
+				</li>
+				<li>
+					<things>
+						<RH_TET_SteamTank_WreckC>0.10</RH_TET_SteamTank_WreckC>
+					</things>
+					<indoorRuin>false</indoorRuin>
+					<coveredCellsPer10Cells>0.5~1</coveredCellsPer10Cells>
+					<filthDef>Filth_RubbleBuilding</filthDef>
+					<filthExpandBy>1</filthExpandBy>
+					<filthChance>0.05</filthChance>
+					<clusterRectRadius>5~6</clusterRectRadius>
+				</li>
+				<li>
+					<things>
+						<RH_TET_SteamTank_WreckD>0.05</RH_TET_SteamTank_WreckD>
+					</things>
+					<indoorRuin>false</indoorRuin>
+					<coveredCellsPer10Cells>0.5~1</coveredCellsPer10Cells>
+					<filthDef>Filth_RubbleBuilding</filthDef>
+					<filthExpandBy>1</filthExpandBy>
+					<filthChance>0.05</filthChance>
+					<clusterRectRadius>5~6</clusterRectRadius>
+				</li>
+			</groups>
+		</genStep>
+	</GenStepDef>
+  
+</Defs>

@@ -1,0 +1,13 @@
+D:\BackUp\Modding\RimWorld\1.4\Rimhammer-EmpireSteamTank1.4\Source\RimhammerSteamTanks\obj\Debug\RimhammerSteamTanks.csproj.CoreCompileInputs.cache
+D:\BackUp\Modding\RimWorld\1.4\Rimhammer-EmpireSteamTank1.4\Source\RimhammerSteamTanks\obj\Debug\RimhammerSteamTanks.csprojAssemblyReference.cache
+D:\BackUp\Modding\RimWorld\1.4\Rimhammer-EmpireSteamTank1.4\1.4\Assemblies\RimahmmerSteamTanks.dll
+D:\BackUp\Modding\RimWorld\1.4\Rimhammer-EmpireSteamTank1.4\1.4\Assemblies\RimahmmerSteamTanks.pdb
+D:\BackUp\Modding\RimWorld\1.4\Rimhammer-EmpireSteamTank1.4\Source\RimhammerSteamTanks\obj\Debug\RimhammerSteamTanks.csproj.CopyComplete
+D:\BackUp\Modding\RimWorld\1.4\Rimhammer-EmpireSteamTank1.4\Source\RimhammerSteamTanks\obj\Debug\RimahmmerSteamTanks.dll
+D:\BackUp\Modding\RimWorld\1.4\Rimhammer-EmpireSteamTank1.4\Source\RimhammerSteamTanks\obj\Debug\RimahmmerSteamTanks.pdb
+D:\BackUp\Modding\RimWorld\Repositories\Rimhammer-EmpireSteamTank\1.4\Assemblies\RimahmmerSteamTanks.dll
+D:\BackUp\Modding\RimWorld\Repositories\Rimhammer-EmpireSteamTank\1.4\Assemblies\RimahmmerSteamTanks.pdb
+D:\BackUp\Modding\RimWorld\Repositories\Rimhammer-EmpireSteamTank\Source\RimhammerSteamTanks\obj\Debug\RimhammerSteamTanks.csprojAssemblyReference.cache
+D:\BackUp\Modding\RimWorld\Repositories\Rimhammer-EmpireSteamTank\Source\RimhammerSteamTanks\obj\Debug\RimhammerSteamTanks.csproj.CoreCompileInputs.cache
+D:\BackUp\Modding\RimWorld\Repositories\Rimhammer-EmpireSteamTank\Source\RimhammerSteamTanks\obj\Debug\RimahmmerSteamTanks.dll
+D:\BackUp\Modding\RimWorld\Repositories\Rimhammer-EmpireSteamTank\Source\RimhammerSteamTanks\obj\Debug\RimahmmerSteamTanks.pdb

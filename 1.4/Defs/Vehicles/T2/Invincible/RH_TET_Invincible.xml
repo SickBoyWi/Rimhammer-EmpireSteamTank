@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable" Name="RH_TET_SteamTank_IndomitableBlueprint">
+		<defName>RH_TET_SteamTank_IndomitableBlueprint</defName>
+		<label>Empire Indomitable Steam Tank</label>
+		<description>A heavily armored combat vehicle.</description>
+
+		<graphicData>
+			<texPath>Things/Vehicles/t2/Indomitable/Indomitable_Tank_north</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(4,6)</drawSize>
+		</graphicData>
+		
+		<statBases>
+			<MaxHitPoints>1300</MaxHitPoints>
+			<WorkToBuild>1400</WorkToBuild>
+			<Flammability>0.05</Flammability>
+		</statBases>
+		
+		<size>(3,5)</size>
+		
+		<researchPrerequisites>
+			<li>Smithing</li>
+		</researchPrerequisites>
+		
+		<costList>
+			<Steel>200</Steel>
+			<ComponentIndustrial>10</ComponentIndustrial>
+			<Steam_Tank_Wheel>4</Steam_Tank_Wheel>
+			<Steam_Tank_SteamPipes>2</Steam_Tank_SteamPipes>
+			<Steam_Tank_SteamChamber>1</Steam_Tank_SteamChamber>
+			<Steam_Tank_Piston>2</Steam_Tank_Piston>
+			<RH_TET_ST_Boiler>1</RH_TET_ST_Boiler>
+			<RH_TET_ST_ArmorPlate>8</RH_TET_ST_ArmorPlate>
+		</costList>
+		
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		
+		<thingToSpawn>RH_TET_SteamTank_Indomitable</thingToSpawn>
+		
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</Vehicles.VehicleBuildDef>
+
+	<Vehicles.VehicleDef ParentName="RH_TET_SteamTank_Base">
+		<defName>RH_TET_SteamTank_Indomitable</defName>
+		<label>Indomitable Steam Tank</label>
+		<description>A Steam Tank is a monstrous, smoke-belching, steam-driven Imperial war machine that rumbles towards the enemy and fires deadly cannonballs from its steam-powered cannons to crush all those that stand against the Empire.\n\nMore armored battering ram than tank, this version has no cannon nor steam gun, but is the fastest and most robust of all other classes. This is a mid tier steam tank of the Hammer class.</description>
+		
+		<graphicData>
+			<texPath>Things/Vehicles/t2/Indomitable/Indomitable_Tank</texPath>
+			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(4, 6)</drawSize>
+			<color>(160, 120, 45)</color>
+			<colorTwo>(225, 225, 225)</colorTwo>
+			<colorThree>(50, 50, 50)</colorThree>
+		</graphicData>
+		
+		<fillPercent>1</fillPercent>
+		
+		<buildDef>RH_TET_SteamTank_IndomitableBlueprint</buildDef>
+		
+		<size>(3, 5)</size>
+		
+		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
+		<vehicleCategory>Combat</vehicleCategory>
+		<techLevel>Medieval</techLevel>
+		<vehicleType>Land</vehicleType>
+		
+		<statBases>
+			<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+			<ArmorRating_Heat>0.80</ArmorRating_Heat>
+			<Flammability>0.1</Flammability>
+			<MarketValue>4000</MarketValue>
+		</statBases>
+		
+		<vehicleStats>
+			<Mass>550</Mass>
+			<MoveSpeed>7.5</MoveSpeed>
+			<CargoCapacity>350</CargoCapacity>
+			<RepairRate>0.5</RepairRate>
+		</vehicleStats>
+		
+		<soundSustainersOnEvent>
+			<li>
+				<key>(IgnitionOn, IgnitionOff)</key>
+				<value>RH_TET_SteamTankEngineSound</value>
+			</li>
+		</soundSustainersOnEvent>
+		
+		<race>
+			<baseBodySize>4.5</baseBodySize>
+		</race>
+		
+		<properties>
+			<customRoadCosts AssignDefaults="0.4"/>
+			
+			<vehicleJobLimitations>
+				<li>(RepairVehicle, 3)</li>
+			</vehicleJobLimitations>
+
+			<manhunterTargetsVehicle>true</manhunterTargetsVehicle>
+			
+			<roles>
+				<li>
+					<key>driver</key>
+					<label>Driver</label>
+					<slots>1</slots>
+					<slotsToOperate>1</slotsToOperate>
+					
+					<handlingTypes>
+						<li>Movement</li>
+					</handlingTypes>
+				</li>
+				<li>
+					<key>passenger</key>
+					<label>Passenger</label>
+					<slots>4</slots>
+				</li>
+			</roles>
+		</properties>
+		
+		<components>
+			<li>
+				<key>Boiler</key>
+				<label>Boiler</label>
+				<health>250</health>
+				<priorityStatEfficiency>true</priorityStatEfficiency>
+				<depth>Internal</depth>
+				
+				<reactors>
+					<li Class="Vehicles.Reactor_Explosive">
+						<indicator>VF_Explosive</indicator>
+						<chance>0.15</chance>
+						<radius>3</radius>
+						<damageDef>Bomb</damageDef>
+					</li>
+				</reactors>
+				
+				<hitbox>
+					<cells>
+						<li>(0, -1)</li>
+						<li>(0, -2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontLeftWheel</key>
+				<label>Front Left Wheel</label>
+				<health>80</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(-1, 2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontRightWheel</key>
+				<label>Front Right Wheel</label>
+				<health>80</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(1, 1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackLeftWheel</key>
+				<label>Back Left Wheel</label>
+				<health>80</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(-1, -2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>BackRightWheel</key>
+				<label>Back Right Wheel</label>
+				<health>80</health>
+				<depth>External</depth>
+				
+				<tags>
+					<li>Wheel</li>
+				</tags>
+				
+				<hitbox>
+					<fallthrough>false</fallthrough>
+					<cells>
+						<li>(1, -2)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>SteamPipes</key>
+				<label>Steam Pipes</label>
+				<health>75</health>
+				<depth>Internal</depth>
+				
+				<hitbox>
+					<cells>
+						<li>(0, 1)</li>
+					</cells>
+				</hitbox>
+				
+				<categories>
+					<li>MoveSpeed</li>
+				</categories>
+			</li>
+			<li>
+				<key>FrontArmorPlating</key>
+				<label>Front Armor Plating</label>
+				<health>600</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+				</armor>
+				
+				<hitbox>
+					<side>Front</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>LeftArmorPlating</key>
+				<label>Left Armor Plating</label>
+				<health>450</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+				</armor>
+				
+				<hitbox>
+					<side>Left</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>RightArmorPlating</key>
+				<label>Right Armor Plating</label>
+				<health>450</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+				</armor>
+				
+				<hitbox>
+					<side>Right</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>BackArmorPlating</key>
+				<label>Rear Armor Plating</label>
+				<health>250</health>
+				<depth>External</depth>
+				
+				<armor>
+					<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+				</armor>
+				
+				<hitbox>
+					<side>Back</side>
+				</hitbox>
+			</li>
+			<li>
+				<key>Steamchamber</key>
+				<label>Steamchamber</label>
+				<health>200</health>
+				<depth>Internal</depth>
+				
+				<reactors>
+					<li Class="Vehicles.Reactor_FuelLeak"/>
+				</reactors>
+				
+				<hitbox>
+					<cells>
+						<li>(0, -1)</li>
+					</cells>
+				</hitbox>
+			</li>
+			<li>
+				<key>SteeringApparatus</key>
+				<label>Steering Apparatus</label>
+				<health>100</health>
+				<depth>Internal</depth>
+				<hitWeight>5</hitWeight>
+			</li>
+			<li>
+				<key>Piston</key>
+				<label>Piston</label>
+				<health>150</health>
+				<depth>Internal</depth>
+			</li>
+			<li>
+				<key>Roof</key>
+				<label>Roof</label>
+				<health>250</health>
+				<depth>External</depth>
+				<hitWeight>10</hitWeight>
+				
+				<armor>
+					<ArmorRating_Blunt>0.82</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+				</armor>
+			</li>
+		</components>
+
+		<comps>
+			<li Class="Vehicles.CompProperties_FueledTravel">
+				<fuelType>WoodLog</fuelType>
+				<leakDef>Filth_Water</leakDef>
+				<fuelConsumptionRate>20</fuelConsumptionRate>
+				<fuelCapacity>120</fuelCapacity>
+			</li>
+		</comps>
+	</Vehicles.VehicleDef>
+
+</Defs>
