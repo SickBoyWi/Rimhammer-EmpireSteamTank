@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Name="RH_TET_SteamTankWreck_Base" ParentName="NonDeconstructibleAncientBuildingBase" Abstract="True">
+		<label>ruined steam tank</label>
+		<description>The remains of an Empire steam tank, destroyed in some battle or by some mishap. Destroy this to see what useful components can be recovered from its wreckage.</description>
+		<rotatable>false</rotatable>
+		<graphicData>
+			<texPath>Things/Vehicles/Destroyed/Destroyed_Steamtank</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(6,4)</drawSize>
+			<shadowData>
+				<volume>(4.1, 0.66, 2.4)</volume>
+			</shadowData>
+		</graphicData>
+		<size>(5,3)</size>
+		<fillPercent>0.5</fillPercent>
+		<castEdgeShadows>true</castEdgeShadows>
+		<passability>PassThroughOnly</passability>
+		<pathCost>50</pathCost>
+		<statBases>
+			<MaxHitPoints>2000</MaxHitPoints>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="RH_TET_SteamTankWreck_Base">
+		<defName>RH_TET_SteamTank_WreckA</defName>
+		<killedLeavings>
+			<RH_TET_ST_ArmorPlate>2</RH_TET_ST_ArmorPlate>
+			<Steam_Tank_Piston>1</Steam_Tank_Piston>
+			<Steam_Tank_SteamPipes>1</Steam_Tank_SteamPipes>
+			<ChunkSlagSteel>6</ChunkSlagSteel>
+		</killedLeavings>
+	</ThingDef>
+
+	<ThingDef ParentName="RH_TET_SteamTankWreck_Base">
+		<defName>RH_TET_SteamTank_WreckB</defName>
+		<killedLeavings>
+			<RH_TET_ST_ArmorPlate>3</RH_TET_ST_ArmorPlate>
+			<Steam_Tank_SteamPipes>1</Steam_Tank_SteamPipes>
+			<Steam_Tank_Wheel>1</Steam_Tank_Wheel>
+			<ChunkSlagSteel>6</ChunkSlagSteel>
+		</killedLeavings>
+	</ThingDef>
+
+	<ThingDef ParentName="RH_TET_SteamTankWreck_Base">
+		<defName>RH_TET_SteamTank_WreckC</defName>
+		<killedLeavings>
+			<RH_TET_ST_ArmorPlate>2</RH_TET_ST_ArmorPlate>
+			<Steam_Tank_SteamPipes>1</Steam_Tank_SteamPipes>
+			<Steam_Tank_SteamChamber>1</Steam_Tank_SteamChamber>
+			<ChunkSlagSteel>6</ChunkSlagSteel>
+		</killedLeavings>
+	</ThingDef>
+
+	<ThingDef ParentName="RH_TET_SteamTankWreck_Base">
+		<defName>RH_TET_SteamTank_WreckD</defName>
+		<killedLeavings>
+			<RH_TET_ST_ArmorPlate>2</RH_TET_ST_ArmorPlate>
+			<Steam_Tank_SteamPipes>1</Steam_Tank_SteamPipes>
+			<RH_TET_ST_Boiler>1</RH_TET_ST_Boiler>
+			<ChunkSlagSteel>6</ChunkSlagSteel>
+		</killedLeavings>
+	</ThingDef>
+  
+</Defs>

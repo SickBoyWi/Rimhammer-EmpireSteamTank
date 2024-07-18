@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable" Name="RH_TET_SteamTank_DeliveranceBlueprint">
-		<defName>RH_TET_SteamTank_DeliveranceBlueprint</defName>
-		<label>Empire Deliverance Steam Tank</label>
+	<Vehicles.VehicleBuildDef ParentName="VehicleBaseBuildable" Name="RH_TET_SteamTank_IndomitableBlueprint">
+		<defName>RH_TET_SteamTank_IndomitableBlueprint</defName>
+		<label>Empire Indomitable Steam Tank</label>
 		<description>A heavily armored combat vehicle.</description>
 
 		<graphicData>
-			<texPath>Things/Vehicles/t2/Deliverance/Deliverance_Tank_north</texPath>
+			<texPath>Things/Vehicles/t2/Indomitable/Indomitable_Tank_north</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(4,6)</drawSize>
 		</graphicData>
 		
 		<statBases>
-			<MaxHitPoints>1100</MaxHitPoints>
-			<WorkToBuild>13500</WorkToBuild>
+			<MaxHitPoints>1300</MaxHitPoints>
+			<WorkToBuild>1400</WorkToBuild>
 			<Flammability>0.05</Flammability>
 		</statBases>
 		
@@ -26,41 +26,41 @@
 		</researchPrerequisites>
 		
 		<costList>
-			<Steel>300</Steel>
+			<Steel>200</Steel>
 			<ComponentIndustrial>10</ComponentIndustrial>
 			<Steam_Tank_Wheel>4</Steam_Tank_Wheel>
 			<Steam_Tank_SteamPipes>2</Steam_Tank_SteamPipes>
 			<Steam_Tank_SteamChamber>1</Steam_Tank_SteamChamber>
 			<Steam_Tank_Piston>2</Steam_Tank_Piston>
 			<RH_TET_ST_Boiler>1</RH_TET_ST_Boiler>
-			<RH_TET_ST_ArmorPlate>6</RH_TET_ST_ArmorPlate>
+			<RH_TET_ST_ArmorPlate>8</RH_TET_ST_ArmorPlate>
 		</costList>
 		
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		
-		<thingToSpawn>RH_TET_SteamTank_Deliverance</thingToSpawn>
+		<thingToSpawn>RH_TET_SteamTank_Indomitable</thingToSpawn>
 		
-		<constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
 	</Vehicles.VehicleBuildDef>
 
 	<Vehicles.VehicleDef ParentName="RH_TET_SteamTank_Base">
-		<defName>RH_TET_SteamTank_Deliverance</defName>
-		<label>Deliverance Steam Tank</label>
-		<description>A Steam Tank is a monstrous, smoke-belching, steam-driven Imperial war machine that rumbles towards the enemy and fires deadly cannonballs from its steam-powered cannons to crush all those that stand against the Empire.\n\nThis mid tier steam tank is slightly more efficient than the older 'Conqueror' class. The Deliverance class was originally a Nuln crafted tank, and is equipped with a Flame cannon.</description>
+		<defName>RH_TET_SteamTank_Indomitable</defName>
+		<label>Indomitable Steam Tank</label>
+		<description>A Steam Tank is a monstrous, smoke-belching, steam-driven Imperial war machine that rumbles towards the enemy and fires deadly cannonballs from its steam-powered cannons to crush all those that stand against the Empire.\n\nMore armored battering ram than tank, this version has no cannon nor steam gun, but is the fastest and most robust of all other classes. This is a mid tier steam tank of the Hammer class.</description>
 		
 		<graphicData>
-			<texPath>Things/Vehicles/t2/Deliverance/Deliverance_Tank</texPath>
+			<texPath>Things/Vehicles/t2/Indomitable/Indomitable_Tank</texPath>
 			<graphicClass>Vehicles.Graphic_Vehicle</graphicClass>
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(4, 6)</drawSize>
-			<color>(60, 60, 60)</color>
+			<color>(160, 120, 45)</color>
 			<colorTwo>(225, 225, 225)</colorTwo>
 			<colorThree>(50, 50, 50)</colorThree>
 		</graphicData>
 		
 		<fillPercent>1</fillPercent>
 		
-		<buildDef>RH_TET_SteamTank_DeliveranceBlueprint</buildDef>
+		<buildDef>RH_TET_SteamTank_IndomitableBlueprint</buildDef>
 		
 		<size>(3, 5)</size>
 		
@@ -72,19 +72,18 @@
 		<statBases>
 			<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
-			<ArmorRating_Heat>0.85</ArmorRating_Heat>
-			<Flammability>0.5</Flammability>
+			<ArmorRating_Heat>0.80</ArmorRating_Heat>
+			<Flammability>0.1</Flammability>
 			<MarketValue>4000</MarketValue>
 		</statBases>
 		
 		<vehicleStats>
 			<Mass>550</Mass>
-			<MoveSpeed>5.5</MoveSpeed>
-			<CargoCapacity>300</CargoCapacity>
+			<MoveSpeed>7.5</MoveSpeed>
+			<CargoCapacity>350</CargoCapacity>
 			<RepairRate>0.5</RepairRate>
 		</vehicleStats>
 		
-<!--		
 		<soundSustainersOnEvent>
 			<li>
 				<key>IgnitionOn</key>
@@ -95,7 +94,6 @@
 				<value>RH_TET_SteamTankEngineSound</value>
 			</li>
 		</soundSustainersOnEvent>
--->
 		
 		<race>
 			<baseBodySize>4.5</baseBodySize>
@@ -122,21 +120,9 @@
 					</handlingTypes>
 				</li>
 				<li>
-					<key>gunner</key>
-					<label>Gunner</label>
-					<slots>1</slots>
-					<slotsToOperate>1</slotsToOperate>
-					
-					<handlingTypes>Turret</handlingTypes>
-					
-					<turretIds>
-						<li>mainTurret</li>
-					</turretIds>
-				</li>
-				<li>
 					<key>passenger</key>
 					<label>Passenger</label>
-					<slots>2</slots>
+					<slots>4</slots>
 				</li>
 			</roles>
 		</properties>
@@ -366,8 +352,8 @@
 				<hitWeight>10</hitWeight>
 				
 				<armor>
-					<ArmorRating_Blunt>0.60</ArmorRating_Blunt>
-					<ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.82</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
 				</armor>
 			</li>
 		</components>
@@ -376,141 +362,10 @@
 			<li Class="Vehicles.CompProperties_FueledTravel">
 				<fuelType>WoodLog</fuelType>
 				<leakDef>Filth_Water</leakDef>
-				<fuelConsumptionRate>15</fuelConsumptionRate>
-				<fuelCapacity>105</fuelCapacity>
-			</li>
-			<li Class="Vehicles.CompProperties_VehicleTurrets">
-				<turrets>
-					<li>
-						<turretDef>RH_TET_SteamTank_HullCannon</turretDef>
-						
-						<renderProperties>
-							<north>(0, 1.3)</north>
-							<south>(0, -1.3)</south>
-							<east>(1.2, 0.3)</east>
-						</renderProperties>
-						
-						<gizmoLabel>Hull Cannon</gizmoLabel>
-						
-						<angleRestricted>(345, 15)</angleRestricted>
-						<aimPieOffset>(0, 0.5)</aimPieOffset>
-						
-						<key>hullTurret</key>
-					</li>
-					<li>
-						<turretDef>RH_TET_SteamTank_TurretFlame</turretDef>
-						
-						<renderProperties>
-							<north>(0, 0.8)</north>
-							<south>(0, -0.6)</south>
-							<east>(0.5, 0.6)</east>
-						</renderProperties>
-						
-						<gizmoLabel>Flame Turret</gizmoLabel>
-						
-						<angleRestricted/>
-						<aimPieOffset>(0, 2.55)</aimPieOffset>
-						
-						<key>flameTurret</key>
-					</li>
-				</turrets>
+				<fuelConsumptionRate>20</fuelConsumptionRate>
+				<fuelCapacity>120</fuelCapacity>
 			</li>
 		</comps>
 	</Vehicles.VehicleDef>
-	
-	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
-	
-		<defName>RH_TET_SteamTank_TurretFlameBullet</defName>
-		<label>flame</label>
-		
-		<thingClass>VFECore.FlamethrowProjectile</thingClass>
-		
-		<graphicData>
-			<texPath>Things/Projectile/Proj_FlameGun</texPath>
-			<texPathFadeOut>Things/Projectile/Proj_FlameGunFadeOut</texPathFadeOut>
-			<shaderType>MoteGlow</shaderType>
-		</graphicData>
-		<projectile>
-			<damageDef>Flame</damageDef>
-			<speed>45</speed>
-			<damageAmountBase>10</damageAmountBase>
-		</projectile>
-
-		<drawOffscreen>true</drawOffscreen>
-		<lifeTimeDuration>50</lifeTimeDuration>
-		<widthScaleFactor>0.65</widthScaleFactor>
-		<heightScaleFactor>1</heightScaleFactor>
-		<startingPositionOffset>(0, 0, -3.30)</startingPositionOffset>
-		<totalSizeScale>1.15</totalSizeScale>
-		<tickFrameRate>2</tickFrameRate>
-		<finalTickFrameRate>5</finalTickFrameRate>
-		<tickDamageRate>20</tickDamageRate>
-		<dealsDamageOnce>true</dealsDamageOnce>
-		<minDistanceToAffect>2</minDistanceToAffect>
-		
-	</VFECore.ExpandableProjectileDef>
-	
-	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase" Name="RH_TET_FlameTurret">
-		<defName>RH_TET_SteamTank_TurretFlame</defName>
-		<label>steam tank flame cannon</label>
-		<description>A turret mounted flame cannon, capable of blasting fire at nearby foes in a broad swath. Great for weaking havoc amongst grouped foes.</description>
-		
-		<turretType>Rotatable</turretType>
-		<shotSound>RH_TET_Shot_SteamTankFlameCannonSound</shotSound>
-		<reloadSound>RH_TET_Shot_SteamTankReloadSound</reloadSound>
-		
-		<projectile>RH_TET_SteamTank_TurretFlameBullet</projectile>
-		<reloadTimer>4.4</reloadTimer>
-		<warmUpTimer>3.4</warmUpTimer>
-		<magazineCapacity>1</magazineCapacity>
-		<chargePerAmmoCount>5</chargePerAmmoCount>
-		<genericAmmo>true</genericAmmo>
-
-		<autoSnapTargeting>false</autoSnapTargeting>
-		<rotationSpeed>.5</rotationSpeed>
-		
-		<projectileOffset>5.25</projectileOffset>
-		<hitFlags>IntendedTarget</hitFlags>
-		<maxRange>16</maxRange>
-		<minRange>1</minRange>
-		
-		<attachProjectileFlag>Tank</attachProjectileFlag>
-		
-		<recoil>
-			<distanceTotal>0.01</distanceTotal>
-			<distancePerTick>0.01</distancePerTick>
-			<speedMultiplierPostRecoil>0.35</speedMultiplierPostRecoil>
-		</recoil>
-		
-		<vehicleRecoil>
-			<distanceTotal>0.01</distanceTotal>
-			<distancePerTick>0.01</distancePerTick>
-			<speedMultiplierPostRecoil>0.55</speedMultiplierPostRecoil>
-		</vehicleRecoil>
-		
-		<fireModes>
-			<li>
-				<shotsPerBurst>1</shotsPerBurst>
-				<ticksBetweenBursts>1</ticksBetweenBursts>
-				<spreadRadius>2.9</spreadRadius>
-				<label>Flame Blast</label>
-				<texPath>UI/Gizmos/FireRate_Single</texPath>
-			</li>
-		</fireModes>
-		
-		<graphicData>
-			<texPath>Things/Vehicles/t2/Deliverance/Deliverance_Tank_CannonTop</texPath>
-			<graphicClass>Vehicles.Graphic_Turret</graphicClass>
-			<shaderType>CutoutComplex</shaderType>
-			<drawSize>(3.9, 3.9)</drawSize>
-		</graphicData>
-		
-		<ammunition>
-			<thingDefs>
-				<li>Chemfuel</li>
-			</thingDefs>
-		</ammunition>
-		
-	</Vehicles.VehicleTurretDef>
 
 </Defs>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Defs>
+
+	<SoundDef>
+		<defName>RH_TET_SteamTankEngineSound</defName>
+		<sustain>true</sustain>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<priorityMode>PrioritizeNearest</priorityMode>
+		<subSounds>
+			<li>
+				<muteWhenPaused>True</muteWhenPaused>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>SteamEngineIdle</clipPath>
+					</li>
+				</grains>
+				<pitchRange>0.99~1.01</pitchRange>
+				<volumeRange>25~25</volumeRange>
+				<sustainAttack>2.5</sustainAttack>
+				<sustainRelease>2.5</sustainRelease>
+			</li>
+		</subSounds>
+	</SoundDef>
+ 
+	<SoundDef>
+		<defName>RH_TET_SteamTankEngineDrivingSound</defName>
+		<sustain>true</sustain>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<priorityMode>PrioritizeNearest</priorityMode>
+		<subSounds>
+			<li>
+				<muteWhenPaused>True</muteWhenPaused>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>SteamEngineDrive</clipPath>
+					</li>
+				</grains>
+				<pitchRange>0.99~1.01</pitchRange>
+				<volumeRange>25~25</volumeRange>
+				<sustainAttack>2.5</sustainAttack>
+				<sustainRelease>2.5</sustainRelease>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+</Defs>

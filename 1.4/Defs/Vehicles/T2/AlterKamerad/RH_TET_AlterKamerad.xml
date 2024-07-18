@@ -84,12 +84,18 @@
 			<RepairRate>0.5</RepairRate>
 		</vehicleStats>
 		
+<!--		
 		<soundSustainersOnEvent>
 			<li>
-				<key>(IgnitionOn, IgnitionOff)</key>
+				<key>IgnitionOn</key>
+				<value>RH_TET_SteamTankEngineSound</value>
+			</li>
+			<li>
+				<key>IgnitionOff</key>
 				<value>RH_TET_SteamTankEngineSound</value>
 			</li>
 		</soundSustainersOnEvent>
+-->
 		
 		<race>
 			<baseBodySize>4.5</baseBodySize>
