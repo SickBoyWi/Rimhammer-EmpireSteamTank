@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
-	<!--If Empre mod is present, add research to idols and relics. -->
+	<!--If Empre mod is present, then update ammo and research prereqs.--> 
 	<Operation Class="PatchOperationFindMod">
 		<mods>
 			<li>Rimhammer - The End Times - Empire</li>
@@ -66,6 +66,6 @@
 			</operations>
 		</match>
 	</Operation>
-
+	
 </Patch>
 

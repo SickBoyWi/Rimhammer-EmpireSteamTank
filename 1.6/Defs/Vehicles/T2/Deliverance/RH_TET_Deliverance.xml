@@ -64,7 +64,6 @@
 		
 		<size>(3, 5)</size>
 		
-		<vehicleMovementPermissions>DriverNeeded</vehicleMovementPermissions>
 		<vehicleCategory>Combat</vehicleCategory>
 		<techLevel>Medieval</techLevel>
 		<vehicleType>Land</vehicleType>
@@ -84,18 +83,13 @@
 			<RepairRate>0.5</RepairRate>
 		</vehicleStats>
 		
-<!--		
 		<soundSustainersOnEvent>
 			<li>
-				<key>IgnitionOn</key>
-				<value>RH_TET_SteamTankEngineSound</value>
-			</li>
-			<li>
-				<key>IgnitionOff</key>
+				<start>IgnitionOn</start>
+				<stop>IgnitionOff</stop>
 				<value>RH_TET_SteamTankEngineSound</value>
 			</li>
 		</soundSustainersOnEvent>
--->
 		
 		<race>
 			<baseBodySize>4.5</baseBodySize>
@@ -418,12 +412,12 @@
 		</comps>
 	</Vehicles.VehicleDef>
 	
-	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+	<VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
 	
 		<defName>RH_TET_SteamTank_TurretFlameBullet</defName>
 		<label>flame</label>
 		
-		<thingClass>VFECore.FlamethrowProjectile</thingClass>
+		<thingClass>VEF.Weapons.FlamethrowProjectile</thingClass>
 		
 		<graphicData>
 			<texPath>Things/Projectile/Proj_FlameGun</texPath>
@@ -448,7 +442,7 @@
 		<dealsDamageOnce>true</dealsDamageOnce>
 		<minDistanceToAffect>2</minDistanceToAffect>
 		
-	</VFECore.ExpandableProjectileDef>
+	</VEF.Weapons.ExpandableProjectileDef>
 	
 	<Vehicles.VehicleTurretDef ParentName="VehicleTurretBase" Name="RH_TET_FlameTurret">
 		<defName>RH_TET_SteamTank_TurretFlame</defName>
@@ -470,7 +464,6 @@
 		<rotationSpeed>.5</rotationSpeed>
 		
 		<projectileOffset>5.25</projectileOffset>
-		<hitFlags>IntendedTarget</hitFlags>
 		<maxRange>16</maxRange>
 		<minRange>1</minRange>
 		
